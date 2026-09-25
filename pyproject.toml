@@ -1,0 +1,9 @@
+[project]
+name = "ccusr-connector-broker"
+version = "0.1.0"
+description = "连接器能力授权、资源投影、审批会话与调用回执的领域资料"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.unittest]
+start-directory = "tests"

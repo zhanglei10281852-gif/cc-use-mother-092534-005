@@ -1,0 +1,44 @@
+[
+  {
+    "event_id": "evt-05-001",
+    "event_type": "demand.calculated",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T09:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-05-002",
+    "event_type": "consent.confirmed",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T10:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-05-003",
+    "event_type": "call.authorized",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T11:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-05-004",
+    "event_type": "call.completed",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T12:00:00+08:00",
+    "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-05-005",
+    "event_type": "scope.reduced",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T13:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-05-006",
+    "event_type": "capability.isolated",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T14:00:00+08:00",
+    "actor_id": "reviewer-02"
+  }
+]
