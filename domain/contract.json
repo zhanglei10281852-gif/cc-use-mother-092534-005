@@ -1,5 +1,6 @@
 {
   "project": "连接器最小权限会话代理",
+  "version": 2,
   "entities": [
     "account_link",
     "capability",
@@ -8,6 +9,12 @@
     "connector_call",
     "external_receipt",
     "quota"
+  ],
+  "capability_dimensions": [
+    "resource",
+    "action",
+    "data_scope",
+    "valid_time_window"
   ],
   "states": [
     "proposed",
@@ -24,9 +31,16 @@
     "consent.confirmed",
     "call.authorized",
     "call.completed",
+    "call.denied",
+    "call.replayed",
     "scope.reduced",
     "capability.isolated",
+    "capability.restored",
+    "capability.revoked",
+    "receipt.pending",
     "receipt.received",
+    "receipt.reconciled",
+    "session.recovered",
     "session.closed"
   ],
   "time_policy": "ISO 8601 with timezone",
@@ -36,6 +50,14 @@
     "会话能力必须是任务需求的最小覆盖集合",
     "授权版本变化后未开始的调用不得继续",
     "写操作幂等键在租户与连接器范围内唯一",
-    "单项能力撤销不得影响无关合法范围"
+    "单项能力撤销不得影响无关合法范围",
+    "外部授权按资源、动作、数据范围、有效时间四个维度分别授予",
+    "扩大已确认范围必须由资源所有者重新确认后才生效",
+    "每次外部调用前后都必须校验会话版本与能力状态",
+    "分页读取期间授权收缩的，已返回数据保留审计、尚未领取的页立即停止",
+    "写操作凭幂等键去重，本地重试与崩溃恢复不得造成外部重复发送",
+    "外部回执在核销前持久化，服务恢复后继续对账",
+    "隔离单项能力或撤销单项资源不得切断同一会话内的其他合法任务",
+    "管理视图必须可查请求范围、实际使用、拒绝原因与剩余额度"
   ]
 }

@@ -40,5 +40,19 @@
     "aggregate_id": "case-05-001",
     "occurred_at": "2026-09-25T14:00:00+08:00",
     "actor_id": "reviewer-02"
+  },
+  {
+    "event_id": "evt-05-007",
+    "event_type": "receipt.received",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T15:00:00+08:00",
+    "actor_id": "operator-01"
+  },
+  {
+    "event_id": "evt-05-008",
+    "event_type": "session.closed",
+    "aggregate_id": "case-05-001",
+    "occurred_at": "2026-09-25T16:00:00+08:00",
+    "actor_id": "reviewer-02"
   }
 ]
