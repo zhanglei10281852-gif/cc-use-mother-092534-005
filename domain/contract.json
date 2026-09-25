@@ -24,18 +24,27 @@
     "consent.confirmed",
     "call.authorized",
     "call.completed",
+    "call.denied",
     "scope.reduced",
     "capability.isolated",
+    "capability.revoked",
+    "write.requested",
+    "write.ambiguous",
+    "page.retained",
     "receipt.received",
     "session.closed"
   ],
+  "capability_dimensions": ["resource", "action", "data_scope", "valid_until"],
   "time_policy": "ISO 8601 with timezone",
-  "identifier_policy": "同一租户和对象类型内业务标识唯一",
+  "identifier_policy": "同一租户和对象类型内业务标识唯一；写操作幂等键在租户与连接器范围内唯一",
   "version_policy": "已发布规则与事实通过新版本追加，不覆盖历史",
   "rules": [
     "会话能力必须是任务需求的最小覆盖集合",
-    "授权版本变化后未开始的调用不得继续",
-    "写操作幂等键在租户与连接器范围内唯一",
-    "单项能力撤销不得影响无关合法范围"
+    "扩大资源、动作、数据范围或延长有效时间必须由资源所有者重新确认",
+    "授权版本变化后未开始的调用不得继续，调用前后均须校验会话版本",
+    "分页读取中授权收缩时，已返回数据保留审计，尚未领取的页立即停止",
+    "写操作幂等键在租户与连接器范围内唯一，结果未知时只能对账不得重发",
+    "单项能力撤销或隔离不得影响无关合法范围",
+    "所有状态变更以事件追加保存，服务恢复后重放继续对账"
   ]
 }
